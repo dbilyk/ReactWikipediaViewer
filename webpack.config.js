@@ -7,15 +7,16 @@ const htmlWebpackPluginConfig = new HtmlWebpackPlugin({
 })
 module.exports = {
 
-  entry: "./src/app.jsx",
+  entry: "./src/App.jsx",
   output: {
     path: __dirname + "/dist",
     filename: "bundle.js"
   },
   module: {
     loaders: [
-      { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
-      { test: /\.jsx$/, exclude: /node_modules/, loader: "babel-loader" }
+      { test: /\.js(x)$/, exclude: /node_modules/, loader: "babel-loader" },
+      { test: /\.(s*)css$/, use: ["style-loader", "css-loader", "sass-loader"] }
+
     ]
   },
   plugins: [htmlWebpackPluginConfig]

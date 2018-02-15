@@ -1,11 +1,23 @@
-import React from "react";
+import React from "react"
+import ReactDom from 'react-dom'
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <h1 > Hello World! I'm a react app!</h1 >
+import './styles/styles.scss'
 
-    )
+import WikiData from "./WikiData.js"
+import WikiEntry from "./components/WikiEntry.jsx"
+import AppTitle from "./components/AppTitle.jsx"
+
+
+class App {
+  constructor() {
+    const data = new WikiData()
+
+    this.init = function () {
+      ReactDom.render(<AppTitle title="React Wikipedia App" />, document.getElementById('root'))
+
+    }
 
   }
 }
+new App().init()
+
