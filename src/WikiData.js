@@ -16,6 +16,7 @@ export default class WikiData {
         .then((res) => {
           callback(res.json())
         })
+
     }
   }
 }
